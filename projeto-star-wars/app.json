@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "name": "projeto-star-wars",
+    "slug": "projeto-star-wars",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
