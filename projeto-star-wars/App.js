@@ -1,23 +1,15 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { Botao } from './src/components/Botao';
+import { LojaNaves } from './src/screens/LojaNaves';
+
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Hello World Grupo 5</Text>
-      <StatusBar style="auto" />
-   
-    </View>
+  
+      <LojaNaves/>
+     
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+

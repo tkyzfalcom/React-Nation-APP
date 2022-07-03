@@ -4,9 +4,9 @@ const apiStarWars = axios.create({
     baseURL: 'https://swapi.dev/api/',
 });
 
-export const buscaStarships = () => {
-
-    const url = `starships/`;
+export const buscaStarships = (page?: string) => {
+   
+    const url = "starships/" + page;
 
     return apiStarWars.get(url);
 };
