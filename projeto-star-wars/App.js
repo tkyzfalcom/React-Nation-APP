@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { Botao } from './components/Botao';
+import { Botao } from './src/components/Botao';
 
 export default function App() {
   return (
