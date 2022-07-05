@@ -1,9 +1,12 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { View, Text, FlatList, Linking, TouchableOpacity, Modal } from 'react-native';
+import { View, Text, FlatList, Linking, TouchableOpacity, Modal, Image } from 'react-native';
 import { Botao } from '../../components/Botao';
 import { StarshipModal } from '../../components/modais/StarshipModal';
 import { buscaStarships } from '../../services/api';
 import { styles } from './styles';
+import Millenium from '../../assets/images/MilleniumFalcon.png'
+import Slave from "../../assets/images/SlaveI.png"
+import TieFighter from "../../assets/images/Tie-Fighter.png"
 
 export interface starship {
     name: string,
@@ -23,15 +26,21 @@ export interface starship {
     films: [],
     created: string,
     edited: string,
-    url: string
+    url: string,
+    imagem?,
 }
 
 export const LojaNaves = () => {
 
     const [starShipList, setStarShipList] = useState<starship[]>([]);
-    const [page, setPage] = useState<string>("");
+    const [page, setPage] = useState<string>("?page=1");
     const [loading, setLoading] = useState<boolean>(true);
     const [modal, setModal] = useState<boolean>(false);
+    const [listaImagem, setListaImagem] = useState([Millenium, Slave, TieFighter])
+    const [listaImagem2, setListaImagem2] = useState([TieFighter, Slave, Millenium])
+    const [listaImagem3, setListaImagem3] = useState([])
+    const [listaImagem4, setListaImagem4] = useState([])
+    const [imagem, setImagem] = useState()
     const [starshipItem, setStarshipItem] = useState<starship>(
         {
             name: "",
@@ -51,7 +60,7 @@ export const LojaNaves = () => {
             films: [],
             created: "",
             edited: "",
-            url: ""
+            url: "",
         }
     );
 
@@ -64,8 +73,8 @@ export const LojaNaves = () => {
             console.log(err)
         }).finally(() => setLoading(false))
     }, [page]);
-    
-    
+
+
     return (
         <View style={styles.container}>
             <Text style={styles.title}>
@@ -84,14 +93,23 @@ export const LojaNaves = () => {
                         renderItem={({ item, index }) => (
                             <>
                                 <View>
-                                    <TouchableOpacity
+                                <Text style={styles.cardTitle}>Modelo: {item.model}</Text>
+                                    {page === '?page=1' &&
+                                            <Image source={listaImagem[index]} style={{ width: 20, height: 20 }} />}
+                                        {page === '?page=2' &&
+                                            <Image source={listaImagem2[index]} style={{ width: 20, height: 20 }} />}
+                                        {page === '?page=3' &&
+                                            <Image source={listaImagem3[index]} style={{ width: 20, height: 20 }} />}
+                                        {page === '?page=4' &&
+                                            <Image source={listaImagem4[index]} style={{ width: 20, height: 20 }} />}
+                                        <TouchableOpacity
                                         onPress={() => {
                                             setModal(true)
                                             setStarshipItem(item)
                                         }}
                                         style={styles.cardButton}
                                     >
-                                        <Text style={styles.cardTitle}>Modelo: {item.model}</Text>
+                                       <Text style={{color:"white"}}>Saiba mais</Text>
                                     </TouchableOpacity>
                                 </View>
                             </>
