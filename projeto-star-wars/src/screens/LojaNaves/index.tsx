@@ -89,9 +89,9 @@ export const LojaNaves = () => {
                                             setModal(true)
                                             setStarshipItem(item)
                                         }}
+                                        style={styles.cardButton}
                                     >
-                                        <Text style={styles.cardTitle}>Nave: {item.url}</Text>
-                                        <Text style={styles.text}>Modelo: {item.model}</Text>
+                                        <Text style={styles.cardTitle}>Modelo: {item.model}</Text>
                                     </TouchableOpacity>
                                 </View>
                             </>
@@ -102,10 +102,10 @@ export const LojaNaves = () => {
             }
 
             <View style={styles.buttons}>
-                <Botao titulo={'1'} corFundo={'white'} corTexto={'black'} onPress={() => setPage("?page=1")}></Botao>
-                <Botao titulo={'2'} corFundo={'white'} corTexto={'black'} onPress={() => setPage('?page=2')}></Botao>
-                <Botao titulo={'3'} corFundo={'white'} corTexto={'black'} onPress={() => setPage("?page=3")}></Botao>
-                <Botao titulo={'4'} corFundo={'white'} corTexto={'black'} onPress={() => setPage('?page=4')}></Botao>
+                <Botao titulo={'1'} corTexto={'#a5a9a8'} onPress={() => setPage("?page=1")}></Botao>
+                <Botao titulo={'2'} corTexto={'#a5a9a8'} onPress={() => setPage('?page=2')}></Botao>
+                <Botao titulo={'3'} corTexto={'#a5a9a8'} onPress={() => setPage("?page=3")}></Botao>
+                <Botao titulo={'4'} corTexto={'#a5a9a8'} onPress={() => setPage('?page=4')}></Botao>
             </View>
 
         </View>
