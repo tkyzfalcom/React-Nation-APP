@@ -5,7 +5,6 @@ import { StarshipModal } from '../../components/modais/StarshipModal';
 import { buscaStarships } from '../../services/api';
 import { styles } from './styles';
 
-
 export interface starship {
     name: string,
     model: string,
@@ -73,7 +72,6 @@ export const LojaNaves = () => {
                 Loja de Naves
             </Text>
 
-
             {loading ?
                 <Text style={styles.cardTitle}>
                     Carregando...
@@ -83,9 +81,7 @@ export const LojaNaves = () => {
                     <FlatList
                         data={starShipList}
                         showsVerticalScrollIndicator={false}
-
                         renderItem={({ item, index }) => (
-
                             <>
                                 <View>
                                     <TouchableOpacity
@@ -94,23 +90,14 @@ export const LojaNaves = () => {
                                             setStarshipItem(item)
                                         }}
                                     >
-                                        <Text style={styles.cardTitle}>Nave: {item.name}</Text>
+                                        <Text style={styles.cardTitle}>Nave: {item.url}</Text>
                                         <Text style={styles.text}>Modelo: {item.model}</Text>
-
                                     </TouchableOpacity>
-
-
                                 </View>
-
-
-
                             </>
-                        )
-
-                        }
+                        )}
                     />
                     <StarshipModal item={starshipItem} modal={modal} setModal={setModal} />
-
                 </>
             }
 
