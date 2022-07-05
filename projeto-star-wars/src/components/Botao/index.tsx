@@ -4,16 +4,14 @@ import { styles } from './styles';
 
 interface ButtonProps extends TouchableOpacityProps {
     titulo : string, 
-    corFundo: string,
     corTexto:string 
 };
 
-export function Botao({ titulo, corFundo, corTexto, ...rest } : ButtonProps) {
+export function Botao({ titulo, corTexto, ...rest } : ButtonProps) {
 
     return(
     <TouchableOpacity
-        style={[styles.button,{backgroundColor:corFundo}]}
-        activeOpacity={0.7} 
+        style={[styles.button]}
         {...rest}
     >
         <Text style={[styles.buttonText,{color:corTexto}]}>

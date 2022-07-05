@@ -1,15 +1,10 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import { LojaNaves } from './src/screens/LojaNaves';
+import React from "react";
+import { Routes } from "./src/routes";
 
-
-export default function App() {
-  return (
-  
-      <LojaNaves/>
-     
-  );
+const App = () => {
+  return(
+  <Routes/>
+  )
 }
 
-
+export default App;

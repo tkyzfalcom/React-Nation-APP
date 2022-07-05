@@ -47,6 +47,12 @@ export const styles = StyleSheet.create({
     buttons:{
         display:'flex',
         flexDirection:'row',
-        justifyContent:'space-around'
+        justifyContent:'space-around',
+        alignContent: 'center',
+        alignItems: 'center',
+        paddingHorizontal: 30
+    },
+    cardButton: {
+        paddingVertical: 10,
     }
 })
