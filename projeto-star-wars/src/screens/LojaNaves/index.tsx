@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { View, Text, FlatList, Linking, TouchableOpacity, Modal, Image } from 'react-native';
+import { View, Text, FlatList, Linking, TouchableOpacity, Modal, Image, AppRegistry } from 'react-native';
 import { Botao } from '../../components/Botao';
 import { StarshipModal } from '../../components/modais/StarshipModal';
 import { buscaStarships } from '../../services/api';
@@ -63,7 +63,6 @@ export const LojaNaves = () => {
             url: "",
         }
     );
-
     useEffect(() => {
         setLoading(true);
         buscaStarships(page).then((res) => {
