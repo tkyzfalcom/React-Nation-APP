@@ -19,7 +19,9 @@ const Feed = () => {
     return(
     <Stack.Navigator>
                 <Tab.Screen name="teste" component={Home} options={{headerShown: false}} />
-                <Stack.Screen name="Login" component={Login} />
+                <Stack.Screen
+                options={{headerTintColor:"white", headerStyle:{backgroundColor:"#5e0017"}}}
+                 name="Login" component={Login} />
             </Stack.Navigator>
     )
 }
