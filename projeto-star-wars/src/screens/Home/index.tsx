@@ -1,19 +1,69 @@
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { View, Text, ImageBackground, Image, ScrollView } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import planeta from "../../assets/images/planeta.png"
+import bolado from "../../assets/images/bolado.png"
+import fundo from "../../assets/images/fundo.png"
+
+import Cr90 from    "../../assets/images/CR90Corvette.png"
+import Imperial from "../../assets/images/Imperial.png"
+import Millenium from '../../assets/images/TY-1300.png'
+import Sentinel from "../../assets/images/Sentinel-class.png"
+import DeathStar from "../../assets/images/DS-1Orbital.png"
+import YWing from "../../assets/images/BTLY-wing.png"
+import XWing from "../../assets/images/T-65.png"
+import TwinIon from "../../assets/images/TwinIon.png"
+import Executor from "../../assets/images/Executor.png"
+import GR75 from "../../assets/images/GR-75.png"
+
+import Slave1 from "../../assets/images/Firespray-31.png"
+import ImperialShuttle from "../../assets/images/Lambda-class.png"
+import EF76 from "../../assets/images/EF76Nebulon.png"
+import Calamari from "../../assets/images/MC80Liberty.png"
+import AWing from "../../assets/images/RZ-1.png"
+import BWing from "../../assets/images/ASF-01.png"
+import Republic from "../../assets/images/Consular.png"
+import DroidControl from "../../assets/images/Lucrehulk.png"
+import NabooFighter from "../../assets/images/N-1.png"
+import NabooRoyal from "../../assets/images/J-type327.png"
+
+import Scimitar from "../../assets/images/StarCourier.png"
+import JType from "../../assets/images/J-typeDiplomatic.png"
+import BotaJef from "../../assets/images/Botajef.png"
+import JediStarFighter from "../../assets/images/Delta-7.png"
+import HType from "../../assets/images/H-typeNuvian.png"
+import RepublicAssault from "../../assets/images/Acclamator.png"
+import SolarSailer from "../../assets/images/Punworcca.png"
+import Providence from "../../assets/images/Providence.png"
+import Theta from "../../assets/images/Theta-clas.png"
+import SenatorClass from "../../assets/images/Senator.png"
+
+import NabooStar from "../../assets/images/J-typeStar.png"
+import JediInterceptor from "../../assets/images/Eta-2.png"
+import Arc170 from "../../assets/images/AgressiveReconnaissance.png"
+import Banking from "../../assets/images/Minificent.png"
+import Belbullab from "../../assets/images/Belbulbab-22.png"
+import VWing from "../../assets/images/Alpha-3.png"
+
 
 import { styles } from './styles';
+import { LoginContext } from '../../context/LoginContext';
 
-const fundo = "../../assets/images/fundo.png"
+
 
 export const Home = ({ navigation }) => {
+    var title = useContext(LoginContext).title
+    const [listaImagem, setListaImagem] = useState([Cr90, Imperial, Sentinel,DeathStar,Millenium,YWing,XWing,TwinIon,Executor,
+        GR75,Slave1, ImperialShuttle, EF76,Calamari,AWing,BWing,Republic,
+        DroidControl,NabooFighter,NabooRoyal,Scimitar,JType,BotaJef,JediStarFighter,HType
+        ,RepublicAssault,SolarSailer,Providence,Theta,SenatorClass,NabooStar,JediInterceptor,Arc170,Banking,Belbullab,VWing])
+    const [index,setIndex]=useState<number>(Math.floor(Math.random()*30))
     return <View>
       
 
         <View style={styles.container}>
 
-            <ImageBackground source={require(fundo)} style={styles.imagefundo}>
+            <ImageBackground source={fundo} style={styles.imagefundo}>
 
                 <ScrollView>
                     <View style={styles.boxnav}>
@@ -50,9 +100,10 @@ export const Home = ({ navigation }) => {
 
                     </View>
 
-                    <View style={{ height: 600, width: "100%", backgroundColor: "red" }}>
+                    <View style={{ height: 600, width: "100%" }}>
                         <View>
-
+                        <Image source={listaImagem[index]}/>
+                        
 
 
 
@@ -71,9 +122,11 @@ export const Home = ({ navigation }) => {
                         </View>
 
                         <View style={styles.boximagens}>
-
+                            {title?
                             <Image source={{ uri: "https://static.wikia.nocookie.net/starwars/images/b/b8/HondoOhnaka-TGTB.png/revision/latest/scale-to-width-down/350?cb=20211204222326" }} style={styles.hondo} />
-
+                            :
+                            <Image source={bolado} style={styles.hondo}/>
+                            }
                             <Text style={styles.hondonome}>Hondo Ohnaka</Text>
 
 
