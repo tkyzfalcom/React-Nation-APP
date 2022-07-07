@@ -2,6 +2,7 @@ import React, { createContext, useEffect, useState } from "react";
 import { ListStarships } from "../../screens/LojaNaves";
 
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { Alert } from "react-native";
 
 
 export interface TypeContextCart {
@@ -45,6 +46,12 @@ export const CartProvider = ({ children }) => {
         })
     }, []);
 
+    const createButtonAlert = () =>
+        Alert.alert('Finalizou', 'Pedido finalizado obrigado pela compra, a entrega chegará, talvez... quem sabe', [
+            { text: 'OK', onPress: () => console.log('OK Pressed') },
+        ]);
+
+
     function somaValorTotal() {
         let somaTotal = 0
         listStarship.map((item) => {
@@ -69,6 +76,7 @@ export const CartProvider = ({ children }) => {
             return ship.name === name
         });
         setListStarship(newCart);
+        createButtonAlert()
     };
 
 
