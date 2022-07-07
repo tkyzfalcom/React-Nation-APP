@@ -99,7 +99,7 @@ export const Home = ({ navigation }) => {
                     </Text>
 
                     <Text style={styles.text2promo}>
-                        * Desconto de 50% se você encontrar sua nave
+                        * Desconto de 20% se a nave for sua
                     </Text>
                 </View>
                     
