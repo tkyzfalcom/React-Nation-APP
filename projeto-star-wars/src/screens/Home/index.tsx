@@ -59,9 +59,7 @@ export const Home = ({ navigation }) => {
         DroidControl,NabooFighter,NabooRoyal,Scimitar,JType,BotaJef,JediStarFighter,HType
         ,RepublicAssault,SolarSailer,Providence,Theta,SenatorClass,NabooStar,JediInterceptor,Arc170,Banking,Belbullab,VWing])
     const [index,setIndex]=useState<number>(Math.floor(Math.random()*30))
-
-     
-
+    
     useFocusEffect(
         React.useCallback(() => {
            setIndex(Math.floor(Math.random()*30));
