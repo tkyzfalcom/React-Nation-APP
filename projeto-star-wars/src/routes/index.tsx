@@ -17,7 +17,7 @@ const Stack = createStackNavigator();
 const Feed = () => {
     return(
     <Stack.Navigator>
-                <Tab.Screen name="teste" component={Home}  />
+                <Tab.Screen name="teste" component={Home} options={{headerShown: false}} />
                 <Stack.Screen name="Login" component={Login} />
             </Stack.Navigator>
     )
