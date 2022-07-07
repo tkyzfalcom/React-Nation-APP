@@ -7,9 +7,47 @@ import { styles } from './styles';
 
 import FadedLine from '../../assets/icons/faded-black-div-cut.png'
 
-import Millenium from '../../assets/images/MilleniumFalcon.png'
-import Slave from "../../assets/images/SlaveI.png"
-import TieFighter from "../../assets/images/Tie-Fighter.png"
+import Cr90 from    "../../assets/images/CR90Corvette.png"
+import Imperial from "../../assets/images/Imperial.png"
+import Millenium from '../../assets/images/TY-1300.png'
+import Sentinel from "../../assets/images/Sentinel-class.png"
+import DeathStar from "../../assets/images/DS-1Orbital.png"
+import YWing from "../../assets/images/BTLY-wing.png"
+import XWing from "../../assets/images/T-65.png"
+import TwinIon from "../../assets/images/TwinIon.png"
+import Executor from "../../assets/images/Executor.png"
+import GR75 from "../../assets/images/GR-75.png"
+
+import Slave1 from "../../assets/images/Firespray-31.png"
+import ImperialShuttle from "../../assets/images/Lambda-class.png"
+import EF76 from "../../assets/images/EF76Nebulon.png"
+import Calamari from "../../assets/images/MC80Liberty.png"
+import AWing from "../../assets/images/RZ-1.png"
+import BWing from "../../assets/images/ASF-01.png"
+import Republic from "../../assets/images/Consular.png"
+import DroidControl from "../../assets/images/Lucrehulk.png"
+import NabooFighter from "../../assets/images/N-1.png"
+import NabooRoyal from "../../assets/images/J-type327.png"
+
+import Scimitar from "../../assets/images/StarCourier.png"
+import JType from "../../assets/images/J-typeDiplomatic.png"
+import BotaJef from "../../assets/images/Botajef.png"
+import JediStarFighter from "../../assets/images/Delta-7.png"
+import HType from "../../assets/images/H-typeNuvian.png"
+import RepublicAssault from "../../assets/images/Acclamator.png"
+import SolarSailer from "../../assets/images/Punworcca.png"
+import Providence from "../../assets/images/Providence.png"
+import Theta from "../../assets/images/Theta-clas.png"
+import SenatorClass from "../../assets/images/Senator.png"
+
+import NabooStar from "../../assets/images/J-typeStar.png"
+import JediInterceptor from "../../assets/images/Eta-2.png"
+import Arc170 from "../../assets/images/AgressiveReconnaissance.png"
+import Banking from "../../assets/images/Minificent.png"
+import Belbullab from "../../assets/images/Belbulbab-22.png"
+import VWing from "../../assets/images/Alpha-3.png"
+
+
 
 export interface starship {
     name: string,
@@ -39,10 +77,10 @@ export const LojaNaves = () => {
     const [page, setPage] = useState<string>("?page=1");
     const [loading, setLoading] = useState<boolean>(true);
     const [modal, setModal] = useState<boolean>(false);
-    const [listaImagem, setListaImagem] = useState([Millenium, Slave, TieFighter])
-    const [listaImagem2, setListaImagem2] = useState([TieFighter, Slave, Millenium])
-    const [listaImagem3, setListaImagem3] = useState([])
-    const [listaImagem4, setListaImagem4] = useState([])
+    const [listaImagem, setListaImagem] = useState([Cr90, Imperial, Sentinel,DeathStar,Millenium,YWing,XWing,TwinIon,Executor,GR75])
+    const [listaImagem2, setListaImagem2] = useState([Slave1, ImperialShuttle, EF76,Calamari,AWing,BWing,Republic,DroidControl,NabooFighter,NabooRoyal])
+    const [listaImagem3, setListaImagem3] = useState([Scimitar,JType,BotaJef,JediStarFighter,HType,RepublicAssault,SolarSailer,Providence,Theta,SenatorClass])
+    const [listaImagem4, setListaImagem4] = useState([NabooStar,JediInterceptor,Arc170,Banking,Belbullab,VWing])
     const [imagem, setImagem] = useState()
     const [starshipItem, setStarshipItem] = useState<starship>(
         {
@@ -100,11 +138,11 @@ export const LojaNaves = () => {
                                     {page === '?page=1' &&
                                         <Image source={listaImagem[index]} style={{ width: 180, height: 180 }} />}
                                     {page === '?page=2' &&
-                                        <Image source={listaImagem2[index]} style={{ width: 20, height: 20 }} />}
+                                        <Image source={listaImagem2[index]} style={{ width: 180, height: 180 }} />}
                                     {page === '?page=3' &&
-                                        <Image source={listaImagem3[index]} style={{ width: 20, height: 20 }} />}
+                                        <Image source={listaImagem3[index]} style={{ width: 180, height: 180 }} />}
                                     {page === '?page=4' &&
-                                        <Image source={listaImagem4[index]} style={{ width: 20, height: 20 }} />}
+                                        <Image source={listaImagem4[index]} style={{ width: 180, height: 180 }} />}
                                     <TouchableOpacity
                                         onPress={() => {
                                             setModal(true)
