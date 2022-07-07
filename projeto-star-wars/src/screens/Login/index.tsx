@@ -19,7 +19,6 @@ export const Login = () => {
     useEffect(()=>{
     },[title])
     const postar = () => {
-        console.log("entrou aqui")
         let login: post = {
             title: username,
             body: password,
