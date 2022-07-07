@@ -4,20 +4,37 @@ export const styles = StyleSheet.create ({
     container: {
         flex: 1,
         backgroundColor: '#121015',
-        paddingHorizontal: 30,
-        paddingTop: 60,
+
     },
     text: {
         textAlign: 'center',
-        color: 'lightgreen',
+        color: '#fff',
         fontSize:20
     },
     item:{
         display:'flex',
         flexDirection:"row",
-        justifyContent:"space-between"
-
-
+        justifyContent:"space-between",
+        alignContent: 'center',
+        alignItems: 'center'
+    },
+    titleContainer: {
+        backgroundColor: '#5e0017',
+        paddingHorizontal: 30,
+        paddingTop: 60,
+    },
+    container2: {
+        paddingHorizontal: 30,
+        paddingTop: 10,
+    },
+    title: {
+        color: '#fff',
+        fontSize: 24,
+        fontWeight: 'bold',
+        marginBottom: 10,
+    },
+    container3: {
+        paddingTop: 50
     }
 
 })

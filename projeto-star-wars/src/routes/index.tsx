@@ -51,7 +51,13 @@ export const Routes = () => {
                                 source={LojaIcon}
                             />
                         ),}}/>
-            <Tab.Screen name="Carrinho" component={Cart} />
+            <Tab.Screen name="Carrinho" component={Cart} options={{tabBarIcon: ({color}) => (
+                            <Image
+                                resizeMode='contain'
+                                style={{width: 20, tintColor: color }}
+                                source={CarrinhoIcon}
+                            />
+                        ),}}/>
         </Tab.Navigator>
     </NavigationContainer>
   );
