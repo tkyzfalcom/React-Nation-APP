@@ -48,6 +48,7 @@ import VWing from "../../assets/images/Alpha-3.png"
 
 import { styles } from './styles';
 import { LoginContext } from '../../context/LoginContext';
+import { useFocusEffect } from '@react-navigation/native';
 
 
 
@@ -58,8 +59,19 @@ export const Home = ({ navigation }) => {
         DroidControl,NabooFighter,NabooRoyal,Scimitar,JType,BotaJef,JediStarFighter,HType
         ,RepublicAssault,SolarSailer,Providence,Theta,SenatorClass,NabooStar,JediInterceptor,Arc170,Banking,Belbullab,VWing])
     const [index,setIndex]=useState<number>(Math.floor(Math.random()*30))
-    
+
+     
+
+    useFocusEffect(
+        React.useCallback(() => {
+           setIndex(Math.floor(Math.random()*30));
+        }, [])
+      );
+    useEffect(()=>{
+    },[index])
+
     return <View style={styles.container}>
+      
 
         <ImageBackground source={fundo} style={styles.imagefundo}>
 
