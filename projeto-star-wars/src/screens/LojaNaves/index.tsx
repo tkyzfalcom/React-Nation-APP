@@ -63,7 +63,7 @@ export const LojaNaves = () => {
             url: "",
         }
     );
-
+    
     useEffect(() => {
         setLoading(true);
         buscaStarships(page).then((res) => {
