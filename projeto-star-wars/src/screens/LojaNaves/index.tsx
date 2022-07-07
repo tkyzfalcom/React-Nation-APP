@@ -71,6 +71,13 @@ export interface starship {
     imagem?,
 }
 
+
+export interface ListStarships {
+    name: string,
+    url: string,
+    cost_in_credits?: string,
+}
+
 export const LojaNaves = () => {
 
     const [starShipList, setStarShipList] = useState<starship[]>([]);
@@ -157,7 +164,7 @@ export const LojaNaves = () => {
                             </>
                         )}
                     />
-                    <StarshipModal item={starshipItem} modal={modal} setModal={setModal} />
+                    <StarshipModal item={starshipItem} modal={modal} setModal={setModal} indexStarShips={''} />
                 </>
             }
 
