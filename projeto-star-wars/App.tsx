@@ -22,8 +22,8 @@ const App = () => {
                 logoWidth={150}
             >
              <ProvedorLogin>
-             </ProvedorLogin>
-        <Routes/>
+              <Routes/>
+             </ProvedorLogin> 
   </AnimatedSplash>
   )
 }
