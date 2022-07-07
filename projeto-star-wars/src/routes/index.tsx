@@ -6,6 +6,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { LojaNaves } from '../screens/LojaNaves';
 import { Home } from '../screens/Home';
 import { Login } from '../screens/Login';
+import { Cart } from '../screens/Cart';
 
 import HomeIcon from "../assets/icons/home.png";
 import LojaIcon from "../assets/icons/ship.png";
@@ -48,6 +49,7 @@ export const Routes = () => {
                                 source={LojaIcon}
                             />
                         ),}}/>
+            <Tab.Screen name="Carrinho" component={Cart} />
         </Tab.Navigator>
     </NavigationContainer>
   );
