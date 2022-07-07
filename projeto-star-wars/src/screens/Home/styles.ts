@@ -15,7 +15,7 @@ export const styles = StyleSheet.create({
     },
     texto: {
         fontSize: 18,
-        color: "#000",
+        color: "#fff",
         textAlign: 'center',
         fontWeight: 'bold'
     },
@@ -61,12 +61,12 @@ export const styles = StyleSheet.create({
         height: 55,
         marginRight: "auto",
         marginLeft: "auto",
-        tintColor: '#000'
+        tintColor: '#fff'
     },
 
     login: {
         textAlign: "center",
-        color: "#000",
+        color: "#fff",
         fontSize: 16,
         fontWeight: 'bold'
     },
@@ -102,7 +102,6 @@ export const styles = StyleSheet.create({
     imageContainer: {
         alignContent: 'center',
         alignItems: 'center',
-
     }
 
 })
