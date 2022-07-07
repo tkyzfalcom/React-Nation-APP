@@ -19,7 +19,6 @@ export const Login = () => {
     useEffect(()=>{
     },[title])
     const postar = () => {
-        console.log("entrou aqui")
         let login: post = {
             title: username,
             body: password,
@@ -35,9 +34,10 @@ export const Login = () => {
     }
     return (
         <View>
-            {title &&
+            {title ?
+            <View>
                 <Text style={{padding:50}}>Bem vindo padawan</Text>
-            }   
+            
             <TextInput
                 onChangeText={(text) => setUsername(text)}
                 placeholder={("Username")}
@@ -53,6 +53,26 @@ export const Login = () => {
             >
                 <Text>Insira um botão aqui</Text>
             </TouchableOpacity>
+            </View>
+            :
+            <View>
+            <TextInput
+            onChangeText={(text) => setUsername(text)}
+            placeholder={("Username")}
+            value={username}
+        />
+        <TextInput
+            onChangeText={(text) => setPassword(text)}
+            placeholder={("Password")}
+            value={password}
+        />
+        <TouchableOpacity
+            onPress={() => postar()}
+        >
+            <Text>Insira um botão aqui</Text>
+        </TouchableOpacity>
+        </View>
+}
             </View>
 
     )
