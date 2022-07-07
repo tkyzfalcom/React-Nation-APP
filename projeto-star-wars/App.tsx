@@ -5,6 +5,7 @@ import Logo from './src/assets/images/Hondo_Ohnaka_pirate_symbol.webp';
 import { ProvedorLogin } from "./src/context/LoginContext";
 import { CartProvider } from "./src/context/CartContext";
 
+
 const App = () => {
   const [isLoaded, setIsLoaded] = useState<boolean>(false);
 
