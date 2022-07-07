@@ -3,9 +3,8 @@ import { StyleSheet, Platform } from 'react-native';
 export const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#121015',
-        paddingHorizontal: 30,
-        paddingTop: 60,
+        backgroundColor: '#181818',
+
     },
     title: {
         color: '#fff',
@@ -16,43 +15,37 @@ export const styles = StyleSheet.create({
     cardTitle: {
         color: '#fff',
         fontSize: 18,
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        paddingBottom: 10
     },
-    text: {
-        color: '#fff',
-        fontSize: 14,
-        fontWeight: 'bold'
+    cardButton: {
+        padding: 10,
+        backgroundColor: '#5e0017',
+        borderRadius: 25,
+        marginVertical: 10
     },
-    modal: {
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-        marginTop: 22
+    cardContainer: {
+        alignContent: 'center',
+        alignItems: 'center',
+        marginHorizontal: 20,
+        paddingVertical: 5,
     },
-    modalContainer: {
-        margin: 20,
-        backgroundColor: '#121000',
-        borderRadius: 20,
-        padding: 35,
-        alignItems: "center",
-        shadowColor: "#000",
-        shadowOffset: {
-          width: 0,
-          height: 2
-        },
-        shadowOpacity: 0.25,
-        shadowRadius: 4,
-        elevation: 5
-    },
-    buttons:{
+    buttons: {
         display:'flex',
         flexDirection:'row',
-        justifyContent:'space-around',
+        justifyContent:'center',
         alignContent: 'center',
         alignItems: 'center',
         paddingHorizontal: 30
     },
-    cardButton: {
-        paddingVertical: 10,
+    line: {
+        tintColor: '#6a6e6f',
+        width: 300,
+        height: 8
+    },
+    titleContainer: {
+        backgroundColor: '#5e0017',
+        paddingHorizontal: 30,
+        paddingTop: 60,
     }
 })
