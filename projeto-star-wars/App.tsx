@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from "react";
 import { Routes } from "./src/routes";
 import AnimatedSplash from "react-native-animated-splash-screen";
@@ -23,11 +22,9 @@ const App = () => {
                 logoWidth={150}
             >
              <ProvedorLogin>
-             </ProvedorLogin>
-        <Routes/>
+              <Routes/>
+             </ProvedorLogin> 
   </AnimatedSplash>
-
-
   )
 }
 

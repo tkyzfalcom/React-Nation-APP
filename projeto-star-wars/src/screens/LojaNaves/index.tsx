@@ -4,6 +4,9 @@ import { Botao } from '../../components/Botao';
 import { StarshipModal } from '../../components/modais/StarshipModal';
 import { buscaStarships } from '../../services/api';
 import { styles } from './styles';
+
+import FadedLine from '../../assets/icons/faded-black-div-cut.png'
+
 import Millenium from '../../assets/images/MilleniumFalcon.png'
 import Slave from "../../assets/images/SlaveI.png"
 import TieFighter from "../../assets/images/Tie-Fighter.png"
@@ -77,9 +80,9 @@ export const LojaNaves = () => {
 
     return (
         <View style={styles.container}>
-            <Text style={styles.title}>
+            <View style={styles.titleContainer}><Text style={styles.title}>
                 Loja de Naves
-            </Text>
+            </Text></View>
 
             {loading ?
                 <Text style={styles.cardTitle}>
@@ -92,17 +95,17 @@ export const LojaNaves = () => {
                         showsVerticalScrollIndicator={false}
                         renderItem={({ item, index }) => (
                             <>
-                                <View>
-                                <Text style={styles.cardTitle}>Modelo: {item.model}</Text>
+                                <View style={styles.cardContainer}>
+                                    <Text style={styles.cardTitle}>{item.model}</Text>
                                     {page === '?page=1' &&
-                                            <Image source={listaImagem[index]} style={{ width: 20, height: 20 }} />}
-                                        {page === '?page=2' &&
-                                            <Image source={listaImagem2[index]} style={{ width: 20, height: 20 }} />}
-                                        {page === '?page=3' &&
-                                            <Image source={listaImagem3[index]} style={{ width: 20, height: 20 }} />}
-                                        {page === '?page=4' &&
-                                            <Image source={listaImagem4[index]} style={{ width: 20, height: 20 }} />}
-                                        <TouchableOpacity
+                                        <Image source={listaImagem[index]} style={{ width: 180, height: 180 }} />}
+                                    {page === '?page=2' &&
+                                        <Image source={listaImagem2[index]} style={{ width: 20, height: 20 }} />}
+                                    {page === '?page=3' &&
+                                        <Image source={listaImagem3[index]} style={{ width: 20, height: 20 }} />}
+                                    {page === '?page=4' &&
+                                        <Image source={listaImagem4[index]} style={{ width: 20, height: 20 }} />}
+                                    <TouchableOpacity
                                         onPress={() => {
                                             setModal(true)
                                             setStarshipItem(item)
@@ -111,6 +114,7 @@ export const LojaNaves = () => {
                                     >
                                        <Text style={{color:"white"}}>Saiba mais</Text>
                                     </TouchableOpacity>
+                                    <Image source={FadedLine} style={styles.line}/>
                                 </View>
                             </>
                         )}
