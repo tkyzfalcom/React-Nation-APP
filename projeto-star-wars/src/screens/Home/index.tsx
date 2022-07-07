@@ -60,6 +60,8 @@ export const Home = ({ navigation }) => {
         ,RepublicAssault,SolarSailer,Providence,Theta,SenatorClass,NabooStar,JediInterceptor,Arc170,Banking,Belbullab,VWing])
     const [index,setIndex]=useState<number>(Math.floor(Math.random()*30))
 
+     
+
     useFocusEffect(
         React.useCallback(() => {
            setIndex(Math.floor(Math.random()*30));
@@ -68,57 +70,49 @@ export const Home = ({ navigation }) => {
     useEffect(()=>{
     },[index])
 
-    return <View>
+    return <View style={styles.container}>
       
 
-        <View style={styles.container}>
+        <ImageBackground source={fundo} style={styles.imagefundo}>
 
-            <ImageBackground source={fundo} style={styles.imagefundo}>
+            <View style={styles.boxnav}>
 
-                <ScrollView>
-                    <View style={styles.boxnav}>
-                        <View style={styles.containeBoasVindas}>
-                            <Text style={styles.texto}>SEJA BEM VINDO A MELHOR LOJA DA GALÁXIA</Text>
-                        </View>
-                        <TouchableOpacity onPress={() => navigation.navigate('Login')}>
-
-                            <View style={styles.boxnav2}>
-                                <Image source={{ uri: "https://static.wikia.nocookie.net/starwars/images/d/da/Hondo_Ohnaka_pirate_symbol.png/revision/latest/scale-to-width-down/1200?cb=20151105050113" }}
-                                    style={styles.logo} resizeMode='stretch' />
-                                <View style={styles.boxnav3}>
-
-                                    <Text style={styles.login}>LOGIN</Text>
-                                </View>
-                            </View>
-                        </TouchableOpacity>
-
-
-                    </View>
-                    <View style={styles.boxpromo}>
-
-                        <View style={styles.box2promo}>
-
-                            <Text style={styles.textpromo}>
-                            Estamos há anos ‘LUZ’ obtendo naves, e oferecendo-as com o melhor preço do mercado.
-                            </Text>
-
-                            <Text style={styles.text2promo}>
-                            Desconto de 50% se você encontrar sua nave.
-                            </Text>
-
-                        </View>
-
-                    </View>
-
-                    <View style={{ height: 600, width: "100%" }}>
-                        <View>
-                        <Image source={listaImagem[index]}/>
+                <TouchableOpacity onPress={() => navigation.navigate('Login')}>
+                        <Image source={{ uri: "https://static.wikia.nocookie.net/starwars/images/d/da/Hondo_Ohnaka_pirate_symbol.png/revision/latest/scale-to-width-down/1200?cb=20151105050113" }}
+                            style={styles.logo} resizeMode='stretch' />
                         
+                        <Text style={styles.login}>Login</Text> 
+                </TouchableOpacity>
 
+                <View style={styles.containerBoasVindas}>
+                    <Text style={styles.texto}>SEJA BEM VINDO</Text>
+                    <Text style={styles.texto}>À MELHOR LOJA DA GALÁXIA</Text>
+                </View>
 
+            </View>
 
-                        </View>
+            <ScrollView>
+
+                <View style={styles.box2promo}>
+                    <Text style={styles.textpromo}>
+                        Estamos há anos ‘LUZ’ obtendo naves, e oferecendo-as com o melhor preço do mercado.
+                    </Text>
+
+                    <Text style={styles.text2promo}>
+                        * Desconto de 20% se a nave for sua
+                    </Text>
+                </View>
+                    
+
+                <View style={{ height: 450, width: "100%" }}>
+                    <View style={styles.imageContainer} >
+                        <Image source={listaImagem[index]} style={styles.image} />
+
+                        <Text style={styles.textoinformativo}>
+                            Se quiser saber mais, venha conferir nossa loja!
+                        </Text>
                     </View>
+                </View>
 
 
                     <View>
@@ -126,7 +120,7 @@ export const Home = ({ navigation }) => {
                         <View>
 
                             <Text style={styles.fundador}>
-                                Nosso Fundador:
+                                Conheça Nosso Fundador
                             </Text>
 
                         </View>
@@ -141,15 +135,23 @@ export const Home = ({ navigation }) => {
 
 
                         </View>
-                        <Text style={styles.textoinformativo}>      Foi um pirata macho Weequay nascido em Sriluur que liderava a Gangue Ohnaka no planeta de Florrum localizado nos Territórios da Orla Exterior. Durante as Guerras Clônicas, a gangue estava ativa e possuía uma intensa rivalidade com a Ordem do Osso Sangrento, uma organização, também pirata, liderada por Lassa Rhayme. Após a ascensão do Império Galáctico, sua gangue dissolveu-se. Hondo lançou-se à deriva como um pequeno pirata e contrabandista.</Text>
+                        <Text style={styles.textoinformativo}>Sou o famoso Hondo Ohnaka, CEO da totalmente legalizada Ohnaka Transportes e Soluções®. Poderia lhe contar diversas histórias sobre meus grandes feitos, muitas até seriam verdade. Nestes tempos difíceis sobre o regime imperial, trago a primeira loja virtual onde você, trabalhador honesto, possa comprar sua primeira nave 0-parsecs. Tudo de forma legal e regularizada!
+Caso sua entrega não ocorra dentro do prazo, sugiro que espere mais alguns meses pois eu lhe garanto que receberá sua encomenda!</Text>
 
                     </View>
 
                     <View>
+                        <Text style={styles.fundador}>
+                            Onde Ficamos
+                        </Text>
                         <View style={styles.boximagens}>
                             <Image source={planeta} style={styles.hondo} />
                         </View>
-                        <Text style={styles.textoinformativo}>          Florrum era um planeta desértico com uma grande quantidade de enxofre, localizado no sistema Florrum, dentro do setor Sertar da galáxia, nos Territórios da Orla Exterior. Durante as Guerras Clônicas, foi a localização de uma gangue pirata liderada por Hondo Ohnaka. Florrum foi governada por um curto tempo pela Confederação dos Sistemas Independentes, antes do General Grievous ser derrotado pelo lider pirata.
+                        <Text style={styles.textoinformativo}>
+                        Nosso centro de distribuição fica no planeta Florrum, apenas mais um humilde planeta na Orla Exterior sem nada de interessante. É civilizado? Dependendo da sua definição de civilizado, sim. Apesar disso não venha. Nossa operação é de confiança e você comprador não precisa se preocupar com nada.
+                        </Text>
+                        <Text style={[styles.textoinformativo,{marginBottom: 50}]}>
+                        Eu não estou brincando, não venha.
                         </Text>
                     </View>
 
@@ -157,7 +159,4 @@ export const Home = ({ navigation }) => {
             </ImageBackground>
 
         </View>
-
-
-    </View>
 }

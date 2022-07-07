@@ -5,60 +5,37 @@ export const styles = StyleSheet.create({
     imagefundo: {
         flex: 1,
         opacity: 1
-
-
-
     },
     container: {
-        display: "flex",
-        flexDirection: "column",
         height: "100%",
         width: "100%"
-
     },
-    containeBoasVindas: {
-
-
-        width: 316,
-        backgroundColor: "red"
+    containerBoasVindas: {
+        width: '80%'
     },
-
     texto: {
-        height: 100,
-        fontSize: 28,
-        color: "#f0db1d",
-        textAlign: "center",
-        backgroundColor: "black",
-
+        fontSize: 18,
+        color: "#000",
+        textAlign: 'center',
+        fontWeight: 'bold'
     },
-
-    containerpromo: {
-
-    },
-
-    boxpromo: {
-
-        margin: 20,
-        marginTop: 5
-    },
-
     box2promo: {
         alignContent: "center",
-        padding: 10
+        alignItems: 'center',
+        padding: 10,
+        margin: 20,
+        justifyContent: 'space-between'
     },
-
     textpromo: {
         color: "orange",
-        fontSize: 20,
-        textAlign: "justify"
+        fontSize: 24,
+        textAlign: "center",
     },
     text2promo: {
-        color: "red",
-        fontSize: 12.1,
-        textAlign: "right",
-        position: "absolute",
-        marginTop: 65,
-        marginLeft: 100
+        color: "#5e0017",
+        fontSize: 12,
+        textAlign: "center",
+        fontWeight: 'bold'
     },
 
     hondo: {
@@ -70,32 +47,28 @@ export const styles = StyleSheet.create({
 
     boxnav: {
         display: 'flex',
-        flexDirection: 'row'
+        flexDirection: 'row',
+        paddingHorizontal: 20,
+        paddingTop: 60,
+        backgroundColor: "#5e0017",
+        alignContent: 'center',
+        alignItems: 'center',
+        paddingBottom: 5,
+        justifyContent: 'space-between'
     },
-
-    boxnav2: {
-        backgroundColor: "black",
-        height: 100,
-        width: 100,
-    },
-
-    boxnav3: {
-        width: 100,
-        height: 30
-    },
-
     logo: {
-        width: 90,
-        height: 70,
+        width: 70,
+        height: 55,
         marginRight: "auto",
         marginLeft: "auto",
+        tintColor: '#000'
     },
 
     login: {
         textAlign: "center",
-        marginTop: 5,
-        color: "#6e1a2c",
-        fontSize: 17
+        color: "#000",
+        fontSize: 16,
+        fontWeight: 'bold'
     },
     fundador: {
         textAlign: "center",
@@ -106,7 +79,7 @@ export const styles = StyleSheet.create({
 
     hondonome: {
         marginTop: 20,
-        fontSize: 28,
+        fontSize: 24,
         color: "#f0db1d",
         textAlign: "center",
         backgroundColor: "black",
@@ -115,12 +88,21 @@ export const styles = StyleSheet.create({
     textoinformativo: {
         color: "orange",
         fontSize: 20,
-        textAlign: "justify",
+        textAlign: "center",
         padding:40,
-        marginBottom: 50
+
     },
     boximagens:{
         alignItems:"center"
+    },
+    image: {
+        width: 300,
+        height: 300
+    },
+    imageContainer: {
+        alignContent: 'center',
+        alignItems: 'center',
+
     }
 
 })
