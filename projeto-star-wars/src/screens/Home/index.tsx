@@ -43,7 +43,7 @@ export const Home = ({ navigation }) => {
                             </Text>
 
                             <Text style={styles.text2promo}>
-                            Desconto de 50% se você encontrar sua nave.
+                            * Desconto de 50% se você encontrar sua nave.
                             </Text>
 
                         </View>
@@ -78,7 +78,9 @@ export const Home = ({ navigation }) => {
 
 
                         </View>
-                        <Text style={styles.textoinformativo}>      Foi um pirata macho Weequay nascido em Sriluur que liderava a Gangue Ohnaka no planeta de Florrum localizado nos Territórios da Orla Exterior. Durante as Guerras Clônicas, a gangue estava ativa e possuía uma intensa rivalidade com a Ordem do Osso Sangrento, uma organização, também pirata, liderada por Lassa Rhayme. Após a ascensão do Império Galáctico, sua gangue dissolveu-se. Hondo lançou-se à deriva como um pequeno pirata e contrabandista.</Text>
+                        <Text style={styles.textoinformativo}>   Sou o famoso Hondo Ohnaka, CEO da totalmente legalizada Ohnaka Transportes e Soluções®. Poderia lhe contar diversas histórias sobre meus grandes feitos, muitas até seriam verdade. Nestes tempos difíceis sobre o regime imperial, trago a primeira loja virtual onde você, trabalhador honesto, possa comprar sua primeira nave 0-parsecs. Tudo de forma legal e regularizada!
+
+Caso sua entrega não ocorra dentro do prazo, sugiro que espere mais alguns meses pois eu lhe garanto que receberá sua encomenda!</Text>
 
                     </View>
 
