@@ -18,7 +18,7 @@ interface modalProps extends ModalProps {
     cart?: boolean
 }
 
-export const StarshipModal = ({item, modal, setModal, indexStarShips ,valor, cart, ...rest}:modalProps) => {
+export const StarshipModal = ({item, modal, setModal, indexStarShips, ...rest}:modalProps) => {
 
     const [reload, setReload] = useState<boolean>(false);
     const [processing, setProcessing] = useState<boolean>(true);
@@ -44,13 +44,8 @@ export const StarshipModal = ({item, modal, setModal, indexStarShips ,valor, car
     })
 
     const addItemCart = useContext(ContextCart).addCart;
-    const removeItemCart = useContext(ContextCart).removeCart;
+    
 
-    const starShipCart: ListStarships = {
-        name: itemStarShipsDet.name,
-        url: itemStarShipsDet.url,
-        valor: itemStarShipsDet.cost_in_credits,
-    };
 
     useEffect(() => {
         setProcessing(true);
@@ -62,19 +57,6 @@ export const StarshipModal = ({item, modal, setModal, indexStarShips ,valor, car
             setProcessing(false);
         })
     }, [reload, indexStarShips]);
-
-
-
-    function handleButtonCart (){
-        if(cart) {
-            removeItemCart(starShipCart.name);
-            setModal(false);
-        } else {
-            addItemCart(starShipCart);
-            setModal(true);
-        }
-        
-    }
 
     return <Modal
         animationType="slide"
@@ -102,9 +84,9 @@ export const StarshipModal = ({item, modal, setModal, indexStarShips ,valor, car
                     <Text style={styles.text}>Capacidade de Passageiros: {item.passengers}</Text>
                     <Text style={styles.text}>Capacidade de Carga: {item.cargo_capacity}</Text>
                     <Text style={styles.text}>Classificação de HyperDrive: {item.hyperdrive_rating}</Text>
-                    <Text style={styles.text}>Créditos: {item.cost_in_credits}</Text>
+                    <Text style={styles.text}>Preço: {item.cost_in_credits}</Text>
                     <View>
-                    <Botao titulo={cart ? "Remover" : "Adicionar"} onPress={() => { handleButtonCart(); } } corTexto={"black"} />
+                    <Botao titulo={"Comprar"} onPress={() => {  addItemCart(item) } } corTexto={"white"}/>
                     </View>
                 </View>
             </View>

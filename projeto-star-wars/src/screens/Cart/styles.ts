@@ -9,6 +9,15 @@ export const styles = StyleSheet.create ({
     },
     text: {
         textAlign: 'center',
-        color: 'lightgreen'
+        color: 'lightgreen',
+        fontSize:20
+    },
+    item:{
+        display:'flex',
+        flexDirection:"row",
+        justifyContent:"space-between"
+
+
     }
+
 })

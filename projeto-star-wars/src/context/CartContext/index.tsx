@@ -10,18 +10,24 @@ export interface TypeContextCart {
     valorTotal: number,
     addCart: (ship: ListStarships) => void;
     removeCart: (name: string) => void;
+    removeCartAll:(name: string) => void;
+    
 }
 
 export const ContextCart = createContext<TypeContextCart>({
     listStarship: [{
         name: "",
         url: "",
-        valor: "",
+        cost_in_credits: "",
     }],
     addCart: (ship: ListStarships) => { },
 /*     quantity: 0, */
     valorTotal: 0,
-    removeCart: (name: string) => { }
+    removeCart: (name: string) => { },
+    removeCartAll:(name: string) => {}
+
+    
+
 })
 
 export const CartProvider = ({ children }) => {
@@ -41,8 +47,8 @@ export const CartProvider = ({ children }) => {
 
     function somaValorTotal() {
         let somaTotal = 0
-        listStarship.length !== 0 && listStarship.map((item) => {
-            somaTotal = somaTotal + Number(item.valor)
+        listStarship.map((item) => {
+            somaTotal = somaTotal + Number(item.cost_in_credits)
         });
         setValorTotal(somaTotal);
     };
@@ -58,6 +64,13 @@ export const CartProvider = ({ children }) => {
         });
         setListStarship(newCart);
     };
+    function removeCartAll(name: string) {
+        let newCart = listStarship.filter((ship) => {
+            return ship.name === name
+        });
+        setListStarship(newCart);
+    };
+
 
 
     const cartData = async (value: ListStarships[]) => {
@@ -84,7 +97,10 @@ export const CartProvider = ({ children }) => {
                 listStarship,
                 valorTotal,
                 addCart,
-                removeCart
+                removeCart,
+                removeCartAll
+               
+
             }}
         >
             {children}

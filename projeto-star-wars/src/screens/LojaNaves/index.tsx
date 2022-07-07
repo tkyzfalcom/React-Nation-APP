@@ -75,7 +75,7 @@ export interface starship {
 export interface ListStarships {
     name: string,
     url: string,
-    valor?: string,
+    cost_in_credits?: string,
 }
 
 export const LojaNaves = () => {
